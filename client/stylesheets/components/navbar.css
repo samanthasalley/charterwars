@@ -1,0 +1,28 @@
+.navbar {
+  height: 80px;
+  background: transparent;
+  color: white;
+  border: 0;
+  border-radius: 0;
+}
+
+.container, .navbar-header, .navbar-brand, .brand-logo, .navbar-nav {
+  height: 100%;
+}
+
+.navbar .container {
+  width: 100%;
+}
+
+.navbar-collapse.collapse {
+  height: 100% !important;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
