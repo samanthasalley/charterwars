@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import Navbar from './components/Navbar';
+import Navbar from './containers/Navbar';
 import Home from './containers/Home';
 import About from './containers/About';
 
