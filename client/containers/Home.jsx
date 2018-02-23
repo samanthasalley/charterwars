@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
+import Blurb from '../components/Blurb';
 import VideoContainer from './VideoContainer';
 
 class Home extends Component {
@@ -12,20 +13,33 @@ class Home extends Component {
         {
           name: 'Intro',
           tagline: 'What is Charter Wars?',
-          url: 'https://player.vimeo.com/video/191720155?autoplay=1'
+          url: 'https://player.vimeo.com/video/251221132?autoplay=1'
         },
         {
           name: 'City',
           tagline: 'The people and city behind the debate',
-          url: 'https://player.vimeo.com/video/191720155?autoplay=1'
+          url: 'https://player.vimeo.com/video/251223020?autoplay=1'
         },
         {
           name: 'Debate',
           tagline: 'The debate',
-          url: 'https://player.vimeo.com/video/191720155?autoplay=1'
+          url: 'https://player.vimeo.com/video/251223856?autoplay=1'
         }
-      ]
+      ],
+      showBlurb: false,
     };
+
+    this.handleBlurbClose = this.handleBlurbClose.bind(this);
+  }
+
+  componentDidMount() {
+    const cachedShowBlurb = localStorage.getItem('cachedShowBlurb');
+    if (!cachedShowBlurb) this.setState({ showBlurb: true });
+  }
+
+  handleBlurbClose() {
+    localStorage.setItem('cachedShowBlurb', JSON.stringify(true));
+    this.setState({ showBlurb: false });
   }
 
   render() {
@@ -60,6 +74,7 @@ class Home extends Component {
             </Col>
           </Row>
         </Grid>
+        <Blurb show={this.state.showBlurb} handleClose={this.handleBlurbClose} />
       </div>
     )
   }
