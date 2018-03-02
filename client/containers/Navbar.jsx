@@ -3,7 +3,6 @@ import { Link, withRouter } from 'react-router-dom';
 import { Navbar, Nav, NavItem, Button } from 'react-bootstrap';
 import Share from '../components/Share';
 import cwlogo from '../assets/images/brand-white-transparent.png';
-import '../stylesheets/components/navbar.css';
 
 class CWNavbar extends Component {
   constructor(props) {
@@ -28,7 +27,9 @@ class CWNavbar extends Component {
 
   generateLink() {
     return (
-      this.props.location.pathname === '/' ? <Link to="/about">About</Link> : <Link to="/">Home</Link>
+      this.props.location.pathname === '/' ? 
+      <Link to="/about" className="cw-navbar-link">About</Link> : 
+      <Link to="/" className="cw-navbar-link">Home</Link>
     );
   }
 
@@ -45,16 +46,19 @@ class CWNavbar extends Component {
               </Link>
             </Navbar.Brand>
             <div className="navbar-toggle-wrapper">
-              <Navbar.Toggle className="btn csx-btn-light csx-navbar-toggle" />
+              <Navbar.Toggle className="btn cw-navbar-toggle" />
             </div>
           </Navbar.Header>
           <Navbar.Collapse>
             <ul className="navbar-nav nav navbar-right">
-              <li role="presentation" className="navbar-icon">
+              <li role="presentation">
                 {NavLink}
               </li>
               <li role="presentation" className="navbar-share">
-                <Button onClick={this.handleShow}>Share</Button>
+                <Button className="cw-btn-transparent"
+                  onClick={this.handleShow}>
+                  Share
+                </Button>
               </li>
             </ul>
           </Navbar.Collapse>
