@@ -1,0 +1,18 @@
+// take background color and opacity and convert to new rgba color
+@mixin background-opacity($color, $opacity: 0.5) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+// take color and opacity and convert to new rgba color
+@mixin color-opacity($color, $opacity: 0.5) {
+  color: $color; /* The Fallback */
+  color: rgba($color, $opacity);
+}
+
+// returns custom display, justify-content, and align-items
+@mixin display($flex, $justify, $align) {
+  display: $flex;
+  justify-content: $justify;
+  align-items: $align;
+}

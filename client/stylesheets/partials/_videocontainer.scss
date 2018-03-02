@@ -1,0 +1,71 @@
+.cw-video {
+  height: 100%;
+}
+
+.cw-play {
+  font-size: 1em;
+  border-radius: 100%;
+  padding: 20px 20px 20px 24px;
+  
+  &.cw-play-dark, &.cw-play-dark:focus {
+    color: color(defaultText);
+    @include background-opacity(color(darkText), 0.6);
+  }
+
+  &.cw-play-dark:hover {
+    color: color(defaultText);
+    @include background-opacity(color(darkText), 0.7);
+  }
+  
+  &.cw-play-light, &.cw-play-light:focus {
+    color: color(darkText);
+    @include background-opacity(color(defaultText), 0.6);
+  }
+
+  &.cw-play-light:hover {
+    color: color(darkText);
+    @include background-opacity(color(defaultText), 0.7);
+  }
+
+  .cw-play-icon {
+    @include display(flex, center, center);
+  }
+}
+
+.cw-video .btn-container {
+  margin-bottom: -12px;
+}
+
+.cw-video-tagline {
+  font-size: 1.2em;
+  margin-top: -10px;
+}
+
+.cw-video-city, .cw-video-debate {
+  min-height: 300px;
+  max-height: 500px;
+  @include display(flex, center, center);
+  flex-direction: column;
+
+  .btn-container {
+    margin-bottom: 0;
+  }
+}
+
+.cw-video-city {
+  background: white;
+  color: color(darkText);
+}
+
+.cw-video-debate {
+  background: black;
+}
+
+.video-image-container {
+  margin-bottom: 10px;
+
+  .video-image {
+    height: 100px;
+    width: 300px;
+  }
+}

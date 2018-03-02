@@ -1,0 +1,35 @@
+.navbar {
+  height: 80px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  
+  .container, .navbar-header, .navbar-brand, .brand-logo, .navbar-nav {
+    height: 100%;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .navbar-collapse.collapse {
+    height: 100% !important;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-nav .cw-navbar-link {
+    color: color(defaultText);
+
+    &:focus {
+      color: color(defaultText);
+    }
+
+    &:hover {
+      @include color-opacity(color(defaultText), 0.8);
+    }
+  }
+}

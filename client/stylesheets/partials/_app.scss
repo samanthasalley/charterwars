@@ -1,0 +1,25 @@
+html, body {
+  background: color(backgroundPurple);
+  color: color(defaultText);
+  font-family: $cw-font;
+}
+
+.cw-btn-transparent {
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  color: color(defaultText);
+
+  &:focus, &:active, &:focus:active {
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    color: color(defaultText);
+    box-shadow: none;
+  }
+
+  &:hover {
+    background: transparent;
+    @include color-opacity(color(defaultText), 0.8);
+  }
+}
