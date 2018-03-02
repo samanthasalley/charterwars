@@ -4,6 +4,9 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import Blurb from '../components/Blurb';
 import VideoContainer from './VideoContainer';
 
+import cityImg from '../assets/images/city-icon.png';
+import debateImg from '../assets/images/debate-icon.png';
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -18,12 +21,14 @@ class Home extends Component {
         {
           name: 'City',
           tagline: 'The people and city behind the debate',
-          url: 'https://player.vimeo.com/video/251223020?autoplay=1'
+          url: 'https://player.vimeo.com/video/251223020?autoplay=1',
+          photo: cityImg
         },
         {
           name: 'Debate',
           tagline: 'The debate',
-          url: 'https://player.vimeo.com/video/251223856?autoplay=1'
+          url: 'https://player.vimeo.com/video/251223856?autoplay=1',
+          photo: debateImg
         }
       ],
       showBlurb: false,
@@ -44,32 +49,35 @@ class Home extends Component {
 
   render() {
     const videos = this.state.videos.map((el, i) => {
+      const btnColor = i === 2 ? 'light' : 'dark';
+      const photo = el.photo ? el.photo : null;
       return (
         <VideoContainer
           elementKey={i}
           type={el.name}
           url={el.url}
-          tagline={el.tagline} />
+          tagline={el.tagline} 
+          btnColor={btnColor}
+          photo={photo}
+        />
       );
     });
 
     return (
       <div className="home" className="text-center">
-        <Grid>
-          <Row>
-            <Col xsHidden md={4}></Col>
-            <Col xsHidden md={4}>
+        <Grid fluid>
+          <Row className="top-content">
+            <Col xs={12} className="home-header text-center">
               <h1>Charter Wars</h1>
               <h3>A Documentary Webseries</h3>
               {videos[0]}
             </Col>
-            <Col xsHidden md={4}></Col>
           </Row>
-          <Row>
-            <Col xs={12} md={6}>
+          <Row className="home-content">
+            <Col xs={12} md={6} className="column">
               {videos[1]}
             </Col>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={6} className="column">
               {videos[2]}
             </Col>
           </Row>
