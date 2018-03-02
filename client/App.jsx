@@ -6,8 +6,6 @@ import Navbar from './containers/Navbar';
 import Home from './containers/Home';
 import About from './containers/About';
 
-import './stylesheets/components/app.css';
-
 const App = props => {
   return (
     <div className="application">
