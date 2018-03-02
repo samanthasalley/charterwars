@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import fontawesome from '@fortawesome/fontawesome';
 import App from './App';
 
+import './stylesheets/styles.scss';
+
 const render = (Component) => {
   ReactDOM.render(
     <BrowserRouter>
@@ -15,6 +17,6 @@ const render = (Component) => {
 
 render(App);
 
-// if (module.hot) {
-//   module.hot.accept('./App.jsx', function () { return render(App) });
-// }
+if (module.hot) {
+  module.hot.accept('./App.jsx', function () { return render(App) });
+}
