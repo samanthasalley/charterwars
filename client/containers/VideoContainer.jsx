@@ -28,16 +28,26 @@ class VideoContainer extends Component {
 
   render() {
     const type = this.props.type.toLowerCase();
+    const btnColor = this.props.btnColor;
+
+    const photoShow = !this.props.photo ? { 'display': 'none' } : {};
 
     return (
       <div className={`cw-video cw-video-${type}`}>
-        <button className="btn btn-transparent"
-          onClick={this.handleShow}>
-          <div className="cw-play cw-play-dark">
-            <FontAwesomeIcon icon={faPlay} />
-          </div>
-        </button>
-        <small>{this.props.tagline}</small>
+        <div className="video-image-container" style={photoShow}>
+          <img className="video-image"
+            src={this.props.photo} 
+            alt={`${type} image`} />
+        </div>
+        <div className="btn-container">
+          <button className={`btn cw-btn-transparent cw-play cw-play-${btnColor}`}
+            onClick={this.handleShow}>
+            <div className="cw-play-icon">
+              <FontAwesomeIcon icon={faPlay} size="2x" />
+            </div>
+          </button>
+        </div>
+        <span className="cw-video-tagline">{this.props.tagline}</span>
         <Modal show={this.state.showModal} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>{this.props.tagline}</Modal.Title>
